@@ -66,7 +66,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
-            filename: "style.[hash].min.css",
+            filename: "style.min.css",
             chunkFilename: '[id].[hash].css'
         }),
         new OptimizeCSSAssetsPlugin({
