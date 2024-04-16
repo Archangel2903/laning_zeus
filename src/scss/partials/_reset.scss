@@ -139,6 +139,21 @@ input {
         transform: rotate3d(1, 0, 0, 90deg);
       }
     }
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      margin: 0;
+    }
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-decoration {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+    &:-webkit-autofill {
+      background: none;
+      -webkit-text-fill-color: $input-placeholder-color;
+    }
   }
   &[type="button"], &[type="checkbox"], &[type="image"], &[type="radio"], &[type="reset"], &[type="submit"] {
     &:not(disabled) {
@@ -154,12 +169,6 @@ input {
   }
   &[type="file"], &[type="color"], &[type="image"], &[type="range"] {
     border: none;
-  }
-  &[type="search"] {
-    &::-webkit-search-cancel-button, &::-webkit-search-decoration {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-    }
   }
 
   &::-moz-placeholder {

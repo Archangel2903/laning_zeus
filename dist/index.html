@@ -11,7 +11,7 @@
 <div class="main-wrapper">
     <!-- HEADER -->
     <header class="header">
-        <div class="container">
+        <div class="container d-flex flex-row justify-content-center">
             <a href="" class="logo">
                 <picture>
                     <img src="img/logo.svg" alt="" title="">
@@ -24,16 +24,26 @@
     <!-- CONTENT -->
     <main class="content">
         <section class="section section-content">
-            <div class="section-bg">
+            <!--<div class="section-bg">
                 <picture>
                     <img src="img/background.png" class="section-bg__img" alt="" title="">
                 </picture>
-            </div>
+            </div>-->
+            <!--<div class="container d-flex flex-row justify-content-center">
+                <a href="" class="logo">
+                    <picture>
+                        <img src="img/logo.svg" alt="" title="">
+                    </picture>
+                </a>
+            </div>-->
             <div class="container">
-                <div class="content">
+                <div class="content-wrapper">
+                    <h1 class="title">Win Your Bonus</h1>
+
                     <div class="scene">
                         <picture class="scene__decor scene__decor_back">
-                            <img src="img/decor.png" alt="" title="">
+                            <source media="(min-width: 1024px)" srcset="img/decor.png">
+                            <img src="img/decor_sm.png" alt="" title="">
                         </picture>
                         <picture class="scene__decor scene__decor_front">
                             <img src="img/decor_coins.png" alt="" title="">
@@ -44,13 +54,7 @@
                                 <img src="img/game_base.png" alt="" title="">
                             </picture>
 
-                            <div class="game__slots">
-                                <div class="game__slot"></div>
-                                <div class="game__slot"></div>
-                                <div class="game__slot"></div>
-                                <div class="game__slot"></div>
-                                <div class="game__slot"></div>
-                            </div>
+                            <div class="game__slots"></div>
                         </div>
 
                         <div class="scene__attempt-wrapper" data-count="2">
@@ -61,7 +65,8 @@
                         </div>
                     </div>
 
-                    <button type="button" class="card-content__btn btn btn-style" data-toggle="modal" data-target="#registration">Play now</button>
+                    <!--data-toggle="modal" data-target="#registration"-->
+                    <button type="button" id="button_action" class="scene__action-btn btn btn-style">Play now</button>
                 </div>
             </div>
         </section>
@@ -72,7 +77,7 @@
 <div class="modal fade" id="registration" tabindex="-1" data-backdrop="static" data-keyboard="false" role="dialog" aria-labelledby="registrationLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
         <div class="modal-content reg-content">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="close"><!--data-dismiss="modal" aria-label="Close"--></button>
 
             <div class="registration">
                 <p class="registration__title">100% on 1st DEPOSIT</p>
@@ -96,7 +101,7 @@
                                 <input type="button" class="form-input-button" value="confirm">
                             </label>
 
-                            <button type="submit" class="btn btn-style"><span>Register</span></button>
+                            <button type="button" class="card-content__btn btn btn-style">Register</button>
                         </form>
                     </div>
 
@@ -132,7 +137,7 @@
                                 </label>
                             </fieldset>
 
-                            <button type="submit" class="btn btn-style"><span>Register</span></button>
+                            <button type="button" class="card-content__btn btn btn-style">Register</button>
                         </form>
                     </div>
                 </div>
@@ -144,5 +149,5 @@
     </div>
 </div>
 <!-- BODY END   -->
-<script type="text/javascript" src="bundle.e7f802158797c5162fc4.min.js"></script></body>
+<script type="text/javascript" src="bundle.0414f11377c8cb4bdb95.min.js"></script></body>
 </html>

@@ -14,10 +14,17 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 90vh;
 }
 
-.content {}
+.content-wrapper {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  gap: 2em;
+}
 
 .scene {
   position: relative;
@@ -31,9 +38,9 @@
 
     &_back {
       img {
+        width: 180%;
         left: 60%;
         transform: translate(-50%, -50%);
-        z-index: -1;
       }
     }
     &_front {
@@ -43,7 +50,7 @@
         bottom: 0;
         left: 50%;
         transform: translate(-50%, 50%);
-        z-index: 1;
+        z-index: 2;
       }
     }
   }
@@ -52,18 +59,40 @@
     z-index: 1;
   }
   &__attempt {
+    margin-left: 10px;
 
     &-wrapper {
       position: relative;
       display: flex;
-      flex-direction: row;
-      justify-content: center;
+      flex-flow: row nowrap;
+      justify-content: space-around;
+      align-content: center;
+      align-items: center;
       gap: 10px;
       width: 122px;
       height: 44px;
       margin: 0 auto;
+      padding: 0 2px;
+      background: linear-gradient(to bottom, #f2e5d6 0%,#4e4541 100%);
+      -webkit-border-radius: 100px;
+      -moz-border-radius: 100px;
+      border-radius: 100px;
       z-index: 2;
 
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: url('../img/counter_bg.jpg');
+        background-size: contain;
+        background-position: center;
+        border: 2px solid transparent;
+        -webkit-border-radius: 100px;
+        -moz-border-radius: 100px;
+        border-radius: 100px;
+        z-index: -1;
+      }
       &::after {
         content: attr(data-count);
         display: inline-block;
@@ -95,10 +124,14 @@
       text-transform: uppercase;
     }
   }
+  &__action-btn {
+    z-index: 3;
+  }
 }
 
 .game {
   position: relative;
+  z-index: 1;
 
   &__base {
     img {
@@ -122,26 +155,65 @@
     height: 68%;
     overflow: hidden;
     transform: translate(-50%, -50%);
-  }
-  &__slot {
-    flex: 20% 1 1;
-    background: url('../img/slot_img.png');
-    background-size: cover;
-    background-position: 100% 5000%;
-    transition: all 2s ease-in-out 0s;
 
-    &:nth-child(1) {
-      background-position: 100% 4733%;
+    background: url('../img/slot.png');
+    background-size: cover;
+    background-position: 100% 0;
+    transition: all 2.5s ease-in-out 0s;
+
+    &.attempt-1 {
+      background-position: 100% 1990px;
     }
-    &:nth-child(2) {}
-    &:nth-child(3) {
-      background-position: 100% 4883%;
-    }
-    &:nth-child(4) {
-      background-position: 100% 4850%;
-    }
-    &:nth-child(5) {
-      background-position: 100% 4516%;
+    &.attempt-2 {
+      background-position: 100% 4886px;
     }
   }
 }
+
+@include media-breakpoint-up(sm) {
+  .game {
+    &__slots {
+      &.attempt-1 {
+        background-position: 100% 1970px;
+      }
+      &.attempt-2 {
+        background-position: 100% 4836px;
+      }
+    }
+  }
+}
+@include media-breakpoint-up(md) {
+  .game {
+    &__slots {
+      &.attempt-1 {
+        background-position: 100% 1980px;
+      }
+      &.attempt-2 {
+        background-position: 100% 4480px;
+      }
+    }
+  }
+}
+@include media-breakpoint-up(lg) {
+  .scene {
+    &__decor {
+      &_back {
+        img {
+          width: auto;
+        }
+      }
+    }
+  }
+
+  .game {
+    &__slots {
+      &.attempt-1 {
+        background-position: 100% 2000px;
+      }
+      &.attempt-2 {
+        background-position: 100% 5190px;
+      }
+    }
+  }
+}
+@include media-breakpoint-up(xl) {}

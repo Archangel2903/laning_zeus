@@ -1,8 +1,8 @@
 :root {
   --black: #000;
   --white: #fff;
-  --gold: #F5B832;
-  --blue: #050049;
+  --gold: #EDA300;
+  --blue: #121127;
   --black-bg: #0c0d12;
   --gray-bg: #18191E;
   --selection-bg: #e5c356;
@@ -15,7 +15,7 @@ $main-third-color: #000082;
 
 // colors
 $title-color: #111;
-$text-color: #333;
+$text-color: var(--white);
 $input-placeholder-color: #aaa;
 
 // fonts
@@ -44,7 +44,7 @@ $grid-breakpoints: (
         md: 768px,
         lg: 1024px,
         xl: 1280px,
-        xxl: 1460px,
+        xxl: 1500px,
 );
 
 $container-max-widths: (
@@ -52,5 +52,5 @@ $container-max-widths: (
         md: 720px,
         lg: 960px,
         xl: 1240px,
-        xxl: 1420px,
+        xxl: 1460px,
 );

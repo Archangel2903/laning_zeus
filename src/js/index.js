@@ -22,6 +22,43 @@ $(window).on('load', function () {
 });
 
 $(function () {
+    const closeBtn = $('button.close');
+    let counter = 0;
+    let btn = document.querySelector('#button_action');
+    let slots = document.querySelector('.game__slots');
+    let attempt = document.querySelector('.scene__attempt-wrapper');
+    let modal = $('#registration');
+
+    closeBtn.on('click', function (e) {
+        modal.modal('toggle');
+        e.stopPropagation();
+    })
+
+    btn.addEventListener('click', function (e) {
+        counter++;
+
+        if (counter === 1) {
+            slots.classList.add('attempt-1');
+            attempt.dataset.count = 1;
+        }
+        else if (counter === 2) {
+            slots.classList.remove('attempt-1');
+            slots.classList.add('attempt-2');
+            attempt.dataset.count = 0;
+
+            let modalTimer = setInterval(function () {
+                modal.modal('show');
+
+                clearInterval(modalTimer);
+            }, 3600);
+        }
+        else {
+            modal.modal('show');
+        }
+    });
+});
+
+$(function () {
     // Password switch
     const passBtn = document.querySelector('.form-button-pass');
     let inputs = document.querySelectorAll('input[type="password"]');
