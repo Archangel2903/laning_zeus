@@ -15,15 +15,20 @@
   flex-direction: column;
   justify-content: center;
   min-height: 90vh;
+
+  &> .container {
+    min-height: 90vh;
+  }
 }
 
 .content-wrapper {
   display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
   align-content: center;
   align-items: center;
-  gap: 2em;
+  gap: 16px;
+  min-height: 90vh;
 }
 
 .scene {
@@ -85,7 +90,7 @@
         width: 100%;
         height: 100%;
         background: url('../img/counter_bg.jpg');
-        background-size: contain;
+        background-size: auto;
         background-position: center;
         border: 2px solid transparent;
         -webkit-border-radius: 100px;
@@ -170,6 +175,8 @@
   }
 }
 
+//@#$%^&*
+
 @include media-breakpoint-up(sm) {
   .game {
     &__slots {
@@ -183,6 +190,10 @@
   }
 }
 @include media-breakpoint-up(md) {
+  .scene {
+    max-width: 80%;
+  }
+
   .game {
     &__slots {
       &.attempt-1 {
@@ -196,13 +207,7 @@
 }
 @include media-breakpoint-up(lg) {
   .scene {
-    &__decor {
-      &_back {
-        img {
-          width: auto;
-        }
-      }
-    }
+    max-width: 45%;
   }
 
   .game {
@@ -216,4 +221,13 @@
     }
   }
 }
-@include media-breakpoint-up(xl) {}
+@include media-breakpoint-up(xl) {
+  .scene {
+    max-width: 40%;
+  }
+}
+@include media-breakpoint-up(xxl) {
+  .scene {
+    max-width: none;
+  }
+}
