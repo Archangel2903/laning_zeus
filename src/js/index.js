@@ -50,7 +50,7 @@ $(function () {
                 modal.modal('show');
 
                 clearInterval(modalTimer);
-            }, 3600);
+            }, 4000);
         }
         else {
             modal.modal('show');

@@ -160,65 +160,50 @@
     height: 68%;
     overflow: hidden;
     transform: translate(-50%, -50%);
-
     background: url('../img/slot.png');
     background-size: cover;
-    background-position: 100% 0;
+    background-position: 100% 2088%;
     transition: all 2.5s ease-in-out 0s;
 
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 24%;
+      left: 0;
+      width: 100%;
+      height: 25%;
+      border: 6px solid #F9E381;
+      box-shadow: 0 4px 16px 0 rgba(0, 0, 0, .75), inset 0 4px 16px 0 rgba(0, 0, 0, 0.75);
+      opacity: 0;
+      visibility: hidden;
+      transition: all .35s ease 2.5s;
+    }
+
     &.attempt-1 {
-      background-position: 100% 1990px;
+      background-position: 100% 1839%;
     }
     &.attempt-2 {
-      background-position: 100% 4886px;
+      background-position: 100% 1292%;
+
+      &::after {
+        opacity: 1;
+        visibility: visible;
+      }
     }
   }
 }
 
 //@#$%^&*
 
-@include media-breakpoint-up(sm) {
-  .game {
-    &__slots {
-      &.attempt-1 {
-        background-position: 100% 1970px;
-      }
-      &.attempt-2 {
-        background-position: 100% 4836px;
-      }
-    }
-  }
-}
+@include media-breakpoint-up(sm) {}
 @include media-breakpoint-up(md) {
   .scene {
     max-width: 80%;
-  }
-
-  .game {
-    &__slots {
-      &.attempt-1 {
-        background-position: 100% 1980px;
-      }
-      &.attempt-2 {
-        background-position: 100% 4480px;
-      }
-    }
   }
 }
 @include media-breakpoint-up(lg) {
   .scene {
     max-width: 45%;
-  }
-
-  .game {
-    &__slots {
-      &.attempt-1 {
-        background-position: 100% 2000px;
-      }
-      &.attempt-2 {
-        background-position: 100% 5190px;
-      }
-    }
   }
 }
 @include media-breakpoint-up(xl) {
