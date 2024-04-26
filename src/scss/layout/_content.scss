@@ -24,7 +24,7 @@
 .content-wrapper {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-content: center;
   align-items: center;
   gap: 16px;
@@ -44,6 +44,7 @@
     &_back {
       img {
         width: 180%;
+        top: 40%;
         left: 60%;
         transform: translate(-50%, -50%);
       }
@@ -192,8 +193,6 @@
     }
   }
 }
-
-//@#$%^&*
 
 @include media-breakpoint-up(sm) {}
 @include media-breakpoint-up(md) {
